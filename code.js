@@ -1,20 +1,20 @@
 /**  1. Given an array, write an ES6 function that returns the total length of all the strings in an array.
  
-const strings = ['apple', 'banana', 'cherry', 'date', 'blueberry']
+const strings = ['grape', 'orange', 'papaya', 'kiwi', 'watermelon']
  
 
 console.log(totalLength(strings))
- // Output: 30 
+ // Output: 31 
  
 */
 
-const fruit = ["apple", "banana", "cherry", "date", "blueberry"];
+const fruit = ["grape", "orange", "papaya", "kiwi", "watermelon"];
 
 const CountStringNumber = (arr) => {
-  return strings.reduce((acc, fruit) => acc + fruit.length, 0);
+  return fruit.reduce((acc, fruit) => acc + fruit.length, 0);
 };
 
-// console.log(CountStringNumber(fruit));
+console.log(CountStringNumber(fruit));
 
 /** 2. Write an ES6 function sumSquares that takes an array of numbers and returns the sum of the squares of all the numbers in the array
  
