@@ -159,7 +159,12 @@ const people = [
   { name: "David", age: 40 },
 ];
 
-const getAverageAge = (people) => {};
+const getAverageAge = (people) => {
+  const totalAge = people.reduce((acc, person) => acc + person.age, 0);
+  return { averageAge: totalAge / people.length };
+};
+
+// console.log(getAverageAge(people));
 
 /**  
  
@@ -177,6 +182,24 @@ const getAverageAge = (people) => {};
  // { name: "Slipper", price: 40, quantity: 3 } 
  
  */
+
+const products = [
+  { name: "Bread", price: 10, quantity: 2 },
+  { name: "Clips", price: 20, quantity: 5 },
+  { name: "Knife", price: 30, quantity: 1 },
+  { name: "Slipper", price: 40, quantity: 3 },
+];
+
+const findMostExpensiveProduct = (arr) => {
+  return arr.reduce((acc, product) => {
+    if (acc.price < product.price) {
+      acc = product;
+    }
+    return acc;
+  });
+};
+
+console.log(findMostExpensiveProduct(products));
 
 /** 
 
@@ -196,3 +219,27 @@ const getAverageAge = (people) => {};
  // Output: { 'apple': 3, 'banana': 3, 'cherry': 1 } 
  
  */
+
+
+ const fruits = [
+   "apple",
+   "banana",
+   "banana",
+   "cherry",
+   "apple",
+   "apple",
+   "banana",
+ ];
+
+ const concatString = ( arr )=>{
+    return arr.reduce((acc, fruit)=>{
+      if(acc[fruit]){
+         acc[fruit] += 1;
+      }else{
+         acc[fruit] = 1;
+      }
+      return acc;
+    }, {});
+ }
+
+ console.log(concatString(fruits));
